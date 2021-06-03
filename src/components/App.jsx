@@ -1,38 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Hero from './Hero/Hero';
-import About from './About/About';
-import Projects from './Projects/Projects';
-import Contact from './Contact/Contact';
-import Footer from './Footer/Footer';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import Fade from 'react-reveal/Fade';
 
-import { PortfolioProvider } from '../context/context';
-
-import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
+import Clock from './Clock/Clock';
+import Calculator from './Calculator/Calculator';
 
 function App() {
-  const [hero, setHero] = useState({});
-  const [about, setAbout] = useState({});
-  const [projects, setProjects] = useState([]);
-  const [contact, setContact] = useState({});
-  const [footer, setFooter] = useState({});
-
-  useEffect(() => {
-    setHero({ ...heroData });
-    setAbout({ ...aboutData });
-    setProjects([...projectsData]);
-    setContact({ ...contactData });
-    setFooter({ ...footerData });
-  }, []);
-
   return (
-    <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </PortfolioProvider>
-  );
+    <div>
+      <section>
+        <Container>
+          <Fade duration={1000} delay={500} distance="30px">
+            <h1 className="hero-title">
+            <span className="text-color-main">March Time Calculator</span>
+          </h1>
+        </Fade>
+        <Fade duration={1000} delay={1000} distance="30px"></Fade>
+      </Container>
+      </section>
+      <div className='body'>
+        <Calculator />
+        <Clock />
+      </div>
+      <div className='footer'>Dedicated to those that struggle with math: MrH and CDBGM</div>
+    </div>
+  )
 }
 
 export default App;
