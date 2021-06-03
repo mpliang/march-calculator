@@ -1,6 +1,4 @@
 #hero {
-  min-height: 100vh;
-  height: 100vh;
   display: flex;
   align-items: center;
   border-bottom: 0px;
@@ -26,10 +24,10 @@
   }
 
   .hero-title {
-    font-size: 5.6rem;
+    font-size: 4.6rem;
     font-weight: 700;
     margin-bottom: 3.2rem;
-    text-align: left;
+    text-align: center;
 
     @include respond(tab-land) {
       font-size: 4rem;
